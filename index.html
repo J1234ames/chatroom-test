@@ -8,12 +8,11 @@
   async function sendMessage() {
     const message = document.getElementById("message-input").value;
     loadJSON();
-    log.push(message);
     document.getElementById("message-display").innerHTML += "<br>" + log;
   };
   async function loadJSON() {
     const response = await fetch("log.json");
-    let log = await response.json();
+    const log = await response.json();
   };
 </script>
 </body>
