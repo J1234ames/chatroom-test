@@ -13,16 +13,7 @@
   };
   async function loadJSON() {
     const response = await fetch("log.json");
-    const log = await response.json();
-  };
-  async function sendJSON(log) {
-    const response = await fetch("log.json", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(log),
-    });
+    let log = await response.json();
   };
 </script>
 </body>
