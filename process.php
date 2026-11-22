@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <p>Test</p>
+  Your message: <?php echo $_POST["message"]; ?>
 </body>
 </html>
