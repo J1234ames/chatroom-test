@@ -7,7 +7,7 @@
 <script>
   async function sendMessage() {
     const message = document.getElementById("message").value;
-    const response = await fetch("/api/message", {
+    const response = await fetch("log.txt", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
