@@ -1,23 +1,15 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <textarea id="message" rows="5" cols="30" placeholder="Enter your message here"></textarea><br>
-  <button onclick="sendMessage()">Send</button>
   <p id="message-display">Your message:</p>
 <script>
-  async function sendMessage() {
-    const message = document.getElementById("message").value;
-    const response = await fetch("log.txt", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(message)
-    });
-    const result = await response.json();
-    const messageDisp = document.getElementById("message-display");
-    messageDisp.innerHTML = "<br>" + result.message;
+  async function loadJSON() {
+    const response = await fetch("log.json");
+    const log = await response.json();
+    document.getElementById("message-display").innerHTML = "<br>" + response;
   };
+  
+  loadJSON();
 </script>
 </body>
 </html>
