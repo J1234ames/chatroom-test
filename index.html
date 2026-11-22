@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <textarea id="message" rows="10" cols="15" placeholder="Enter your message here"></textarea><br>
+  <textarea id="message" rows="5" cols="30" placeholder="Enter your message here"></textarea><br>
   <button onclick="sendMessage()">Send</button>
   <p id="message-display">Your message:</p>
 <script>
@@ -11,12 +11,12 @@
       method: "POST";
       headers: {
         "Content-Type": "application/json"
-      };
+      },
       body: JSON.stringify(message)
     });
     const result = await response.json();
     const messageDisp = document.getElementById("message-display");
-    messageDisp.innerHTML = "<br>" + result;
+    messageDisp.innerHTML = "<br>" + result.message;
   };
 </script>
 </body>
