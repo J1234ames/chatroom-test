@@ -9,7 +9,6 @@
     const message = document.getElementById("message-input").value;
     loadJSON();
     log.push(message);
-    sendJSON(log)
     document.getElementById("message-display").innerHTML += "<br>" + log;
   };
   async function loadJSON() {
