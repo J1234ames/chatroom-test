@@ -6,12 +6,9 @@
   <p id="message-display">Your message:</p>
 <script>
   function sendMessage() {
-    const log = loadJSON();
-    document.getElementById("message-display").innerHTML += "<br>" + log;
-  };
-  async function loadJSON() {
     const response = await fetch("log.json");
-    return await response.json();
+    const log = await response.json();
+    await document.getElementById("message-display").innerHTML += "<br>" + log;
   };
 </script>
 </body>
