@@ -6,7 +6,7 @@
   async function loadJSON() {
     const response = await fetch("log.json");
     const log = await response.json();
-    document.getElementById("message-display").innerHTML = "<br>" + response;
+    document.getElementById("message-display").innerHTML += "<br>" + log;
   };
   
   loadJSON();
