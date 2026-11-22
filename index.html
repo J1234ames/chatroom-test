@@ -7,11 +7,11 @@
 <script>
   async function sendMessage() {
     loadJSON();
-    document.getElementById("message-display").innerHTML += "<br>" + log;
   };
   async function loadJSON() {
     const response = await fetch("log.json");
     const log = await response.json();
+    document.getElementById("message-display").innerHTML += "<br>" + log;
   };
 </script>
 </body>
