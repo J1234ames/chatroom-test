@@ -11,7 +11,11 @@
     const message = document.getElementById("message-input").value;
     document.getElementById("test").innerHTML = message;
     const log = localStorage.getItem("log");
-    log += " " + message;
+    if log == null {
+      log = ""
+    } else {
+      log += " " + message;
+    };
     document.getElementById("message-display").innerHTML = "Your message<br>" + log;
     localStorage.setItem("log",log);
   };
