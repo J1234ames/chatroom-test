@@ -9,7 +9,7 @@
   async function sendMessage() {
     const message = document.getElementById("message-input").value;
     const log = localStorage.getItem("log");
-    log.append(message);
+    log += " " + message;
     document.getElementById("message-display").innerHTML = "Your message<br>" + log;
     localStorage.setItem("log",log);
   };
