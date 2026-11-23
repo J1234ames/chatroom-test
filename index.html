@@ -6,7 +6,7 @@
   <button onclick="sendMessage()">Send</button>
   <p id="message-display">Your message:</p>
 <script>
-  async function sendMessage() {
+  function sendMessage() {
     const message = document.getElementById("message-input").value;
     const log = localStorage.getItem("log");
     log += " " + message;
