@@ -11,6 +11,13 @@
     const message = document.getElementById("message-input").value;
     log.push(message);
     document.getElementById("message-display").innerHTML += "<br>" + log;
+    const response = await fetch("log.json" {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(log),
+    });
   };
 </script>
 </body>
