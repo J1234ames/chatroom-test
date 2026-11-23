@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <p id="v-indicator">1</p>
+  <p id="v-indicator">2</p>
   <textarea id="message-input" rows="5" cols="30" placeholder="Enter your message here"></textarea><br>
   <button onclick="sendMessage()">Send</button>
   <p id="message-display">Your message:</p>
+  <p id="test"></p>
 <script>
   function sendMessage() {
     const message = document.getElementById("message-input").value;
+    document.getElementById("test").innerHTML = message;
     const log = localStorage.getItem("log");
     log += " " + message;
     document.getElementById("message-display").innerHTML = "Your message<br>" + log;
