@@ -1,24 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <p id="v-indicator">3</p>
-  <textarea id="message-input" rows="5" cols="30" placeholder="Enter your message here"></textarea><br>
-  <button onclick="sendMessage()">Send</button>
-  <p id="message-display">Your message:</p>
-  <p id="test"></p>
+  <p id="v-indicator">4</p>
 <script>
-  function sendMessage() {
-    const message = document.getElementById("message-input").value;
-    document.getElementById("test").innerHTML = message;
-    const log = localStorage.getItem("log");
-    if log == null {
-      log = ""
-    } else {
-      log += " " + message;
-    };
-    document.getElementById("message-display").innerHTML = "Your message<br>" + log;
-    localStorage.setItem("log",log);
-  };
+
 </script>
 </body>
 </html>
