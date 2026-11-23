@@ -2,8 +2,40 @@
 <html>
 <body>
   <p id="v-indicator">4</p>
+  <label for="email">Enter your email:</label>
+  <input type="email" id="email" name="email">
+  <button onclick="sendEmail">Send confirmation email</button>
 <script>
+  npm install nodemailer
+  const nodemailer = require('nodemailer');
 
+  const transporter = nodemailer.createTransport({
+    host: 'live.smtp.mailtrap.io',
+    port: 587,
+    secure: false,
+    auth: {
+      user: '1a2b3c4d5e6f7g',
+      pass: '1a2b3c4d5e6f7g',
+    }
+  });
+
+  const mailOptions = {
+    from: 'jamesandersongreen42@gmail.com',
+    to: 'isabelacgreen@email.com',
+    subject: 'Test Email',
+    text: 'It worked!'
+  };
+  
+  function sendEmail() {
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        alert("An error occurred.");
+      } else {
+        alert("Success!");
+      }
+    });
+  };
+  
 </script>
 </body>
 </html>
