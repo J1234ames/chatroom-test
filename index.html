@@ -8,6 +8,8 @@
   async function sendMessage() {
     const response = await fetch("log.json");
     const log = await response.json();
+    const message = document.getElementById("message-input").value;
+    log.push(message);
     document.getElementById("message-display").innerHTML += "<br>" + log;
   };
 </script>
