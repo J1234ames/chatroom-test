@@ -2,11 +2,14 @@
 <html>
 <body>
   <textarea id="message-input" rows="5" cols="30" placeholder="Enter your message here"></textarea><br>
-  <button>Send</button>
+  <button onclick="sendMessage()">Send</button>
   <p id="message-display">Your message:</p>
 <script>
-    const x = "Test";
-    document.getElementById("message-display").innerHTML += "<br>" + x;
+  async function sendMessage() {
+    const response = await fetch("log.json");
+    const log = await response.json();
+    document.getElementById("message-display").innerHTML += "<br>" + log;
+  };
 </script>
 </body>
 </html>
