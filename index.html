@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <p id="v-indicator">0</p>
+  <p id="v-indicator">1</p>
   <textarea id="message-input" rows="5" cols="30" placeholder="Enter your message here"></textarea><br>
   <button onclick="sendMessage()">Send</button>
   <p id="message-display">Your message:</p>
 <script>
   async function sendMessage() {
+    const message = document.getElementById("message-input").value;
     const log = localStorage.getItem("log");
     log.append(message);
     localStorage.setItem("log",log);
